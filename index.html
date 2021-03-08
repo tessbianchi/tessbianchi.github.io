@@ -30,6 +30,10 @@
             font-size: 8pt;
         }
 
+        .med {
+            font-size: 10pt;
+        }
+
         /* Clear floats after the columns */
         .row:after {
           content: "";
@@ -47,35 +51,72 @@
 
         .box {
            border-style: solid;
+           border-color: #d28fff;
            margin-bottom: 10px;
            background-color: pink;
                     
+        }
+        .bold {
+            font-weight: bold;
+        }
+        .center{
+            text-align: center;
         }
         
 
 
         .pic {
-          /*height: 250px;*/
           padding-bottom: 5px;
 
-
-        }
-        .pic-left {
-
-        }
-        .pic-right {
-
-        }
-        .contact {
-          height: 150px;
-        }
-        .music {
         }
         .about {
           height: 400px;
+          
+        }
+        .about-text
+        {
+            padding: 5px;
         }
         .projects {
           height: 500px;
+        }
+
+        .friend-img {
+            width:100px;
+        }
+        .friend-img-cont{
+            width:100px;
+            margin: 10px
+        }
+
+        .tooltip {
+          position: relative;
+          display: inline-block;
+        }
+
+        .tooltip .tooltiptext {
+          visibility: hidden;
+          width: 200px;
+          background-color: #ffffe1;
+          color: black;
+          text-align: center;
+          padding: 5px 3px;
+          position: absolute;
+          border-color: #646464;
+          border-style:solid;
+          border-width: thin;
+          z-index: 1;
+          bottom: 100%;
+          left: 50%;
+          margin-left: -60px;
+          opacity: 0;
+          transition: opacity 0.3s;
+          font-family: 'Serif';
+        }
+
+        .tooltip:hover .tooltiptext {
+          visibility: visible;
+          opacity: 1;
         }
 
     </style>
@@ -93,39 +134,80 @@
             <div><b>Tess Bianchi</b></div>
             <div class="row" style='margin:0px;'>
                 <img src="tess.jpg" class="column left" style='width:auto;padding:0px'></img>
-                <div class="column right" style='margin-top:50px'>
+                <div class="column right" style='margin-top:20px'>
+                    <div class='small'>she/her</div>
+                    <div class='small'>Zillenial</div>
                     <div class='small'>Miami, Florida</div>
                     <div class='small'>United States</div>
-                    <img src="online.png" style="width:90px; padding-top:15px"></img>
+                    <img src="online.png" style="width:90px; margin-top:30px"></img>
+                    <div class='small'>Last Login:</div>
+                    <div class='small'>03/12/2008</div>
+
                 </div>
             </div>
-            <div class='small'>Mood: neutral </div>
+            <div class='small'><b class='small'>Mood:</b> neutral </div>
             
             
         </div>
         <div class="box contact">contact
             <div>
-                
                 <a href="mailto:tesshbianchi@gmail.com">
-                <img src="mail.gif"></img>
+                <img src="mail.png"></img>
                 </a>
-
             </div>
+            <div>
+                <a href="github.com/tessbianchi">
+                <img src="github.png"></img>
+                </a>
+            </div>
+            <div>
+                <a href="twitter.com/xtessla">
+                <img src="twitter.png"></img>
+                </a>
+            </div>
+            <div>
+                <a href="https://www.goodreads.com/user/show/8731733-tess-bianchi">
+                <img src="goodreads.png"></img>
+                </a>
+            </div>
+            <div>
+                <a href="https://www.linkedin.com/in/tessbianchi/">
+                <img src="linkedin.png"></img>
+                </a>
+            </div>
+
         </div>
         <div class="box music">
-           <iframe src="https://open.spotify.com/embed/track/6nsyYPCDUSacgXci9mvWln" width="300" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+           <iframe src="https://open.spotify.com/embed/track/6nsyYPCDUSacgXci9mvWln" width="295" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
         </div>
       </div>
       <div class="column right">
         <div class="box about">
             <div>about </div>
-            <div class="small">Hello! Welcome to my webpage! </div>
+            <div class='about-text'>
+                <div class="small">
+                    Hello! Welcome to my webpage!
+                    <br><br>
 
-            <div class="small">I'm a software engineer currently working on a city planning product called <a class="small" href="https://hello.delve.sidewalklabs.com/">Delve</a> at Sidewalk Labs. I previously worked on Self Driving Cars at Uber ATG.</div>
+                    I'm a software engineer currently working on a city planning product called <a class="small" href="https://hello.delve.sidewalklabs.com/">Delve</a> at Sidewalk Labs. I previously worked on Self 
+
+                 </div>
+
+           
+            </div>
 
 
         </div>
-        <div class="box projects">Top 8 Projects</div>
+        <div class="box projects">Top Projects<br><br>
+
+            <div class="friend-img-cont tooltip" title="thingssss">
+                <span class="tooltiptext med">Generated inspirational quotes by training GPT-2 on tweets from Jocko Willink</span>
+                <a href="https://twitter.com/deepjocko/">
+                    <div class='small bold center'>DeepJocko</div>
+                    <img  class="friend-img" src="jocko.jpeg"></img>
+                </a>
+            </div>
+        </div>
       </div>
     </div>
 
