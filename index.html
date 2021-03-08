@@ -3,10 +3,6 @@
         html {
             background-color: pink;
             background-image: url('fairy.gif');
-            /*background-repeat: no-repeat;*/
-/*            background-attachment: fixed;
-            background-position: left bottom; 
-*/
         }
         * {
           box-sizing: border-box;
@@ -69,10 +65,6 @@
           padding-bottom: 5px;
 
         }
-        /*.about {
-          height: 400px;
-          
-        }*/
         .about-text
         {
             padding: 5px;
@@ -88,11 +80,16 @@
             width:100px;
             margin: 10px
         }
+        .friend-img-cont > a {
+            color: black;
+            text-decoration: none; /* no underline */
+        }
 
         .tooltip {
           position: relative;
           display: inline-block;
         }
+
 
         .tooltip .tooltiptext {
           visibility: hidden;
@@ -156,12 +153,12 @@
                 </a>
             </div>
             <div>
-                <a href="github.com/tessbianchi">
+                <a href="https://github.com/tessbianchi">
                 <img src="github.png"></img>
                 </a>
             </div>
             <div>
-                <a href="twitter.com/xtessla">
+                <a href="https://twitter.com/xtessla">
                 <img src="twitter.png"></img>
                 </a>
             </div>
@@ -178,7 +175,7 @@
 
         </div>
         <div class="box music">
-           <iframe src="https://open.spotify.com/embed/track/6nsyYPCDUSacgXci9mvWln" width="295" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
+           <iframe src="https://open.spotify.com/embed/track/6nsyYPCDUSacgXci9mvWln" width="294" height="80" frameborder="0" allowtransparency="true" allow="encrypted-media"></iframe>
         </div>
       </div>
       <div class="column right">
@@ -186,10 +183,11 @@
             <div>about </div>
             <div class='about-text'>
                 <div class="small">
-                    Hello! Welcome to my webpage!
+                    Hello! I'm Tess and I'm a software engineer building urban innovation products at Sidewalk Labs. 
                     <br><br>
 
-                    I'm a software engineer currently working on a city planning product called <a class="small" href="https://hello.delve.sidewalklabs.com/">Delve</a> at Sidewalk Labs. I previously worked on Self Driving at Uber ATG.
+                    I'm currently working on generative design tool for cities called <a class="small" href="https://hello.delve.sidewalklabs.com/">Delve</a>. Before that, I was building out the traffic light perception system for self driving cars at Uber ATG.
+
 
                     <img src="city.gif" style="width:200px; margin:20px auto; display:block"></img>
 
@@ -200,7 +198,7 @@
 
 
         </div>
-        <div class="box projects">Top Projects<br><br>
+        <div class="box projects">top projects<br><br>
 
             <div class="friend-img-cont tooltip" title="thingssss">
                 <span class="tooltiptext med">Generated inspirational quotes by training GPT-2 on tweets from Jocko Willink</span>
