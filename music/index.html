@@ -6,41 +6,67 @@
 <body>
     <h1>Spotify Web Playback SDK Quick Start</h1>
     <button id="togglePlay">Toggle Play</button>
+    <div id="hello">Logs:</div>
 
     <script src="https://sdk.scdn.co/spotify-player.js"></script>
     <script>
+        function myWrite(text)
+        {
+            console.log("write");
+            document.getElementById('hello').innerHTML += '<br>' + text;
+        }
+        const getDeviceType = () => {
+            const ua = navigator.userAgent;
+            if (/(tablet|ipad|playbook|silk)|(android(?!.*mobi))/i.test(ua)) {
+                return "tablet";
+            }
+            if (
+                /Mobile|iP(hone|od)|Android|BlackBerry|IEMobile|Kindle|Silk-Accelerated|(hpw|web)OS|Opera M(obi|ini)/.test(
+                ua
+                )
+            ) {
+                return "mobile";
+            }
+            return "desktop";
+        };
         window.onSpotifyWebPlaybackSDKReady = () => {
             const token = 'BQAYGbSP6Esrme0kSsk1wJN2E_bb5VTUhSyRpdymLqIYCyhRJqqYgN1SY7F2JRWTJUZ5xUyDY3zWynOZt_0xLf0Ys_GnxW0gZsQIv2IwTi0hd3EBC_86w8v_gtVDj-tPirMtjFexqL9dNGvTo0jWhjpzDNOV1M_KnTYO';
+            const ua = navigator.userAgent;
             const player = new Spotify.Player({
-                name: 'Web Playback SDK Quick Start Player',
+                name: "Cassette Player " + getDeviceType(ua),
                 getOAuthToken: cb => { cb(token); },
                 volume: 0.5
             });
 
             // Ready
             player.addListener('ready', ({ device_id }) => {
-                console.log('Ready with Device ID', device_id);
+                myWrite('Ready with Device ID ' + device_id);
+                player.activateElement();
             });
 
             // Not Ready
             player.addListener('not_ready', ({ device_id }) => {
-                console.log('Device ID has gone offline', device_id);
+                myWrite('Device ID has gone offline ' + device_id);
             });
 
             player.addListener('initialization_error', ({ message }) => {
-                console.error(message);
+                myWrite(message);
             });
 
             player.addListener('authentication_error', ({ message }) => {
-                console.error(message);
+                myWrite(message);
             });
 
             player.addListener('account_error', ({ message }) => {
-                console.error(message);
+                myWrite(message);
+            });
+
+            player.addListener('autoplay_failed', () => {
+                myWrite('Autoplay is not allowed by the browser autoplay rules');
             });
 
             document.getElementById('togglePlay').onclick = function() {
-                console.log('toggle')
+               myWrite('toggle'); 
               player.togglePlay();
             };
 
